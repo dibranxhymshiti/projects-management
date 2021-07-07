@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import CustomToolbar from "./components/toolbar/customToolbar";
+import { Container, CssBaseline } from "@material-ui/core";
+import ProjectList from "./views/projectList/projectList";
+import appStyles from "./styles/appStyles";
 
-function App() {
+const App = () => {
+  const classes = appStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <CustomToolbar />
+      <Container maxWidth={"lg"} className={classes.container}>
+        <main>
+          <ProjectList />
+        </main>
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
